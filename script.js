@@ -37,27 +37,31 @@ function Silabas(word){
     fetch(`https://significado.herokuapp.com/v2/silabas/${word}`)
     .then(response => response.json())
     .then(silabas =>{
-         const silabaResult = silabas.map(silabas => silabas).join(' - ')
-        document.getElementById('silabas').innerHTML =
-        `
-        <div class="result-significado">
-            <h1>Silabas</h1>
-            <p>${silabaResult}</p>
-        </div>
-        `
+        if(silabas.length > 0){
+            const silabaResult = silabas.map(silabas => silabas).join(' - ')
+            document.getElementById('silabas').innerHTML =
+            `
+            <div class="result-significado">
+                <h1>Silabas</h1>
+                <p>${silabaResult}</p>
+            </div>
+            `
+        }
     })
 }
 function Frases(word){
     fetch(`https://significado.herokuapp.com/v2/frases/${word}`)
     .then(response => response.json())
     .then(frases =>{
-        document.getElementById('frases').innerHTML =
-        `
-        <div class="result-significado">
-            <h1>Frases</h1>
-            <p>${frases.map(frases => frases.sentence).join('<br/> <br/>')}</p>
-        </div>
-        `
+        if(frases.length > 0){
+            document.getElementById('frases').innerHTML =
+            `
+            <div class="result-significado">
+                <h1>Frases</h1>
+                <p>${frases.map(frases => frases.sentence).join('<br/> <br/>')}</p>
+            </div>
+            `
+        }
     })
 }
 const SearchButton = document.getElementById('search-button');
