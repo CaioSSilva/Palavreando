@@ -68,6 +68,11 @@ function Frases(word){
 const SearchButton = document.getElementById('search-button');
 const campoPesquisa = document.getElementById('palavra-search');
 SearchButton.addEventListener('click', () => {
+    document.getElementById('significado').innerHTML = ``
+    document.getElementById('sinonimos').innerHTML = ``
+    document.getElementById('silabas').innerHTML = ``
+    document.getElementById('frases').innerHTML = ``
+    document.getElementById('error-div').style.display = "none"
     const InputValue = campoPesquisa.value;
     Significado(InputValue)
     Sinonimos(InputValue)
@@ -80,6 +85,7 @@ campoPesquisa.addEventListener("keydown", (key) =>{
     document.getElementById('sinonimos').innerHTML = ``
     document.getElementById('silabas').innerHTML = ``
     document.getElementById('frases').innerHTML = ``
+    document.getElementById('error-div').style.display = "none"
     const InputValue = campoPesquisa.value;
     Significado(InputValue)
     Sinonimos(InputValue)
