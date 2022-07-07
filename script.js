@@ -71,10 +71,14 @@ SearchButton.addEventListener('click', () => {
 })
 campoPesquisa.addEventListener("keydown", (key) =>{
     if (key.code === "Enter") {
-        const InputValue = campoPesquisa.value;
-        Significado(InputValue)
-        Sinonimos(InputValue)
-        Silabas(InputValue)
-        Frases(InputValue)
+    document.getElementById('significado').innerHTML = ``
+    document.getElementById('sinonimos').innerHTML = ``
+    document.getElementById('silabas').innerHTML = ``
+    document.getElementById('frases').innerHTML = ``
+    const InputValue = campoPesquisa.value;
+    Significado(InputValue)
+    Sinonimos(InputValue)
+    Silabas(InputValue)
+    Frases(InputValue)
     }
 })
