@@ -1,5 +1,6 @@
+const BASE_URL = 'https://significado.herokuapp.com/v2/'
 function Significado(word){
-    fetch(`https://significado.herokuapp.com/v2/${word}`)
+    fetch(BASE_URL + word)
     .then(response => response.json())
     .then(significado =>{
         document.getElementById('significado').innerHTML =
@@ -18,7 +19,7 @@ function Significado(word){
     })
 }
 function Sinonimos(word){
-    fetch(`https://significado.herokuapp.com/v2/sinonimos/${word}`)
+    fetch( BASE_URL + 'sinonimos/' + word)
     .then(response => response.json())
     .then(sinonimos =>{
         if(sinonimos.length > 0){
@@ -34,7 +35,7 @@ function Sinonimos(word){
     
 }
 function Silabas(word){
-    fetch(`https://significado.herokuapp.com/v2/silabas/${word}`)
+    fetch(BASE_URL + 'silabas/' + word)
     .then(response => response.json())
     .then(silabas =>{
         if(silabas.length > 0){
@@ -50,7 +51,7 @@ function Silabas(word){
     })
 }
 function Frases(word){
-    fetch(`https://significado.herokuapp.com/v2/frases/${word}`)
+    fetch(BASE_URL + 'frases/' + word)
     .then(response => response.json())
     .then(frases =>{
         if(frases.length > 0){
