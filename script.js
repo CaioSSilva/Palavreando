@@ -15,7 +15,7 @@ function Significado(word){
     `
     })
     .catch(() =>{
-        alert('Palavra não encontrada! Tente Novamente...');
+        Error()
     })
 }
 function Sinonimos(word){
@@ -87,3 +87,10 @@ campoPesquisa.addEventListener("keydown", (key) =>{
     Frases(InputValue)
     }
 })
+function Error(){
+    document.getElementById('error-div').style.display = "flex";
+}
+function demisError(){
+    document.getElementById('error-div').style.display = "none";
+    campoPesquisa.value = ''
+}
