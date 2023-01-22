@@ -1,4 +1,4 @@
-const BASE_URL = 'https://significado.herokuapp.com/v2/'
+const BASE_URL = 'https://dicio-api-ten.vercel.app/v2/'
 function Significado(word){
     fetch(BASE_URL + word)
     .then(response => response.json())
